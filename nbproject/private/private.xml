@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/home/vito/NetBeansProjects/Mafi/src/mafi/core/render/MassPoint.java</file>
+        <file>file:/home/vito/NetBeansProjects/Mafi/src/mafi/core/render/SoftBody.java</file>
+        <file>file:/home/vito/NetBeansProjects/Mafi/src/mafi/gui/MafiFrame.java</file>
+        <file>file:/home/vito/NetBeansProjects/Mafi/src/mafi/core/render/Spring.java</file>
+        <file>file:/home/vito/NetBeansProjects/Mafi/src/mafi/core/primitive/Quad.java</file>
+        <file>file:/home/vito/NetBeansProjects/Mafi/src/mafi/core/primitive/Box.java</file>
+        <file>file:/home/vito/NetBeansProjects/Mafi/src/mafi/core/shaders/Plot3Dexplicit.glsl</file>
+        <file>file:/home/vito/NetBeansProjects/Mafi/src/mafi/core/render/Plot3D.java</file>
+        <file>file:/home/vito/NetBeansProjects/Mafi/src/mafi/core/jocl/CLContext.java</file>
+    </open-files>
+</project-private>
