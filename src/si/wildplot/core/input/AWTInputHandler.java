@@ -14,7 +14,7 @@ import java.awt.event.MouseWheelListener;
 import java.beans.PropertyChangeEvent;
 import javax.swing.event.EventListenerList;
 import si.wildplot.common.util.Logging;
-import si.wildplot.core.MafiObjectImpl;
+import si.wildplot.core.WildPlotObjectImpl;
 import si.wildplot.core.PCKey;
 import si.wildplot.core.Window;
 import si.wildplot.core.event.InputHandler;
@@ -25,7 +25,7 @@ import si.wildplot.core.event.SelectListener;
  *
  * @author vito
  */
-public class AWTInputHandler extends MafiObjectImpl implements InputHandler,
+public class AWTInputHandler extends WildPlotObjectImpl implements InputHandler,
 		FocusListener, KeyListener, MouseListener, MouseMotionListener, MouseWheelListener{
 
 	protected Window wd;

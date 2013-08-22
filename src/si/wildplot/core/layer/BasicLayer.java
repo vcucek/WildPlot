@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import si.wildplot.common.util.GLTaskService;
 import si.wildplot.common.util.Logging;
 import si.wildplot.core.DrawContext;
-import si.wildplot.core.MafiObjectImpl;
+import si.wildplot.core.WildPlotObjectImpl;
 import si.wildplot.core.event.SelectEvent;
 import si.wildplot.core.render.Renderable;
 
@@ -12,7 +12,7 @@ import si.wildplot.core.render.Renderable;
  *
  * @author vito
  */
-public class BasicLayer extends MafiObjectImpl implements Layer{
+public class BasicLayer extends WildPlotObjectImpl implements Layer{
 
 	private final String name;
 	private int position;

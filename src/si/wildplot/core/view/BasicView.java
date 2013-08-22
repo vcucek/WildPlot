@@ -7,7 +7,7 @@ import si.wildplot.common.math.Matrix;
 import si.wildplot.common.math.Vec4;
 import si.wildplot.common.util.Logging;
 import si.wildplot.core.DrawContext;
-import si.wildplot.core.MafiObjectImpl;
+import si.wildplot.core.WildPlotObjectImpl;
 import si.wildplot.core.input.BasicViewInputHandler;
 import si.wildplot.core.input.ViewInputHandler;
 import si.wildplot.core.primitive.Sector;
@@ -16,7 +16,7 @@ import si.wildplot.core.primitive.Sector;
  *
  * @author vito
  */
-public class BasicView extends MafiObjectImpl implements View{
+public class BasicView extends WildPlotObjectImpl implements View{
 
 	protected DrawContext dc;
 

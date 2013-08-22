@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.TreeMap;
 import si.wildplot.common.util.GLTaskService;
 import si.wildplot.common.util.Logging;
-import si.wildplot.core.MafiObjectImpl;
+import si.wildplot.core.WildPlotObjectImpl;
 import si.wildplot.core.event.SelectEvent;
 import si.wildplot.core.layer.BasicLayer;
 import si.wildplot.core.layer.Layer;
@@ -14,7 +14,7 @@ import si.wildplot.core.layer.Layer;
  *
  * @author vito
  */
-public class BasicModel extends MafiObjectImpl implements Model{
+public class BasicModel extends WildPlotObjectImpl implements Model{
 
 	private TreeMap<Integer, Layer> layers = new TreeMap<Integer, Layer>();
 	private ArrayList<Renderable> renderables = new ArrayList<Renderable>();

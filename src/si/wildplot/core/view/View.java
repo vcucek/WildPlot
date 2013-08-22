@@ -6,7 +6,7 @@ import si.wildplot.common.math.Angle;
 import si.wildplot.common.math.Matrix;
 import si.wildplot.common.math.Vec4;
 import si.wildplot.core.DrawContext;
-import si.wildplot.core.MafiObject;
+import si.wildplot.core.WildPlotObject;
 import si.wildplot.core.input.ViewInputHandler;
 import si.wildplot.core.primitive.Sector;
 
@@ -14,7 +14,7 @@ import si.wildplot.core.primitive.Sector;
  *
  * @author vito
  */
-public interface View extends MafiObject{
+public interface View extends WildPlotObject{
 
 	public void apply(DrawContext dc);
 

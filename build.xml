@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- You may freely edit this file. See commented blocks below for -->
 <!-- some examples of how to customize the build. -->
-<project name="Mafi" default="default" basedir=".">
+<project name="WildPlot" default="default" basedir=".">
     <description>Builds, tests, and runs the project Mafi.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--

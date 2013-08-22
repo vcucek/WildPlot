@@ -7,13 +7,13 @@ import si.wildplot.core.avlist.AvListImpl;
  *
  * @author vito
  */
-public class MafiObjectImpl extends AvListImpl implements java.beans.PropertyChangeListener{
+public class WildPlotObjectImpl extends AvListImpl implements java.beans.PropertyChangeListener{
 
-	public MafiObjectImpl()
+	public WildPlotObjectImpl()
 	{
 	}
 
-	public MafiObjectImpl(Object source)
+	public WildPlotObjectImpl(Object source)
 	{
 		super(source);
 	}

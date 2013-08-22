@@ -1,7 +1,7 @@
 package si.wildplot.core.render;
 
 import java.util.ArrayList;
-import si.wildplot.core.MafiObject;
+import si.wildplot.core.WildPlotObject;
 import si.wildplot.core.event.SelectEvent;
 import si.wildplot.core.event.SelectListener;
 import si.wildplot.core.layer.Layer;
@@ -10,7 +10,7 @@ import si.wildplot.core.layer.Layer;
  *
  * @author vito
  */
-public interface Model extends MafiObject, SelectListener{
+public interface Model extends WildPlotObject, SelectListener{
 
 	public void addLayer(String name, int position);
 	public void addLayer(Layer layer);

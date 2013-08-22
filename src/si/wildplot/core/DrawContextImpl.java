@@ -15,7 +15,7 @@ import si.wildplot.core.render.Model;
  *
  * @author vito
  */
-public class DrawContextImpl extends MafiObjectImpl implements DrawContext{
+public class DrawContextImpl extends WildPlotObjectImpl implements DrawContext{
 
 	private GLContext glContext;
 	private GLU glu = new GLU();

@@ -6,6 +6,6 @@ import si.wildplot.core.avlist.AvList;
  *
  * @author vito
  */
-public interface MafiObject extends AvList, java.beans.PropertyChangeListener{
+public interface WildPlotObject extends AvList, java.beans.PropertyChangeListener{
 
 }

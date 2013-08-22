@@ -1,14 +1,14 @@
 package si.wildplot.core.render;
 
 import si.wildplot.core.DrawContext;
-import si.wildplot.core.MafiObject;
+import si.wildplot.core.WildPlotObject;
 import si.wildplot.core.event.SelectListener;
 
 /**
  *
  * @author vito
  */
-public interface Renderable extends MafiObject, SelectListener{
+public interface Renderable extends WildPlotObject, SelectListener{
 
 	public void preRender(DrawContext dc);
 	public void pick(DrawContext dc);

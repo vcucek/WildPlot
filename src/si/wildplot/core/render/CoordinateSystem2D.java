@@ -8,7 +8,7 @@ import javax.media.opengl.GL;
 import javax.media.opengl.GL2;
 import si.wildplot.common.math.Vec4;
 import si.wildplot.core.DrawContext;
-import si.wildplot.core.MafiObjectImpl;
+import si.wildplot.core.WildPlotObjectImpl;
 import si.wildplot.core.event.SelectEvent;
 import si.wildplot.core.primitive.Line;
 
@@ -16,7 +16,7 @@ import si.wildplot.core.primitive.Line;
  *
  * @author vito
  */
-public class CoordinateSystem2D extends MafiObjectImpl implements Renderable{
+public class CoordinateSystem2D extends WildPlotObjectImpl implements Renderable{
 
 	private TextRenderer textRenderer;
 	private DecimalFormat decSciFormat;

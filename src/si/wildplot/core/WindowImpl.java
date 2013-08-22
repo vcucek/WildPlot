@@ -15,7 +15,7 @@ import si.wildplot.core.render.Model;
 /**
  * @author Vito Cucek
  */
-public class WindowImpl extends MafiObjectImpl implements Window{
+public class WindowImpl extends WildPlotObjectImpl implements Window{
 
 	private AbstractSceneController sceneController;
 	private BasicCLContext clContext;

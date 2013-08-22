@@ -14,7 +14,7 @@ import si.wildplot.core.render.Model;
  *
  * @author vito
  */
-public interface DrawContext extends MafiObject{
+public interface DrawContext extends WildPlotObject{
 
 	public void initialize(GLContext glContext);
 	public void requestRedraw();

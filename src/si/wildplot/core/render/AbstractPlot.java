@@ -3,13 +3,13 @@ package si.wildplot.core.render;
 import java.util.HashSet;
 import si.wildplot.common.util.SpecialParameter;
 import si.wildplot.core.DrawContext;
-import si.wildplot.core.MafiObjectImpl;
+import si.wildplot.core.WildPlotObjectImpl;
 
 /**
  *
  * @author vito
  */
-public abstract class AbstractPlot extends MafiObjectImpl implements Function{
+public abstract class AbstractPlot extends WildPlotObjectImpl implements Function{
 
 	private final int numParam;
 	protected String function;

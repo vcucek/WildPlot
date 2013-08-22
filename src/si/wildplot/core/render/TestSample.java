@@ -3,14 +3,14 @@ package si.wildplot.core.render;
 import javax.media.opengl.GL;
 import javax.media.opengl.GL2;
 import si.wildplot.core.DrawContext;
-import si.wildplot.core.MafiObjectImpl;
+import si.wildplot.core.WildPlotObjectImpl;
 import si.wildplot.core.event.SelectEvent;
 
 /**
  *
  * @author vito
  */
-public class TestSample extends MafiObjectImpl implements Renderable{
+public class TestSample extends WildPlotObjectImpl implements Renderable{
 
 	public void preRender(DrawContext dc)
 	{

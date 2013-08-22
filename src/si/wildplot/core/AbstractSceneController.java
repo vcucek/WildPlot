@@ -15,7 +15,7 @@ import si.wildplot.core.render.Model;
  *
  * @author vito
  */
-public abstract class AbstractSceneController extends MafiObjectImpl{
+public abstract class AbstractSceneController extends WildPlotObjectImpl{
 
 	private DrawContext dc = null;
 	private View view = null;

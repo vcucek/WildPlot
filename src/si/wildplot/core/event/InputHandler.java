@@ -4,14 +4,14 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelListener;
-import si.wildplot.core.MafiObject;
+import si.wildplot.core.WildPlotObject;
 import si.wildplot.core.Window;
 
 /**
  *
  * @author vito
  */
-public interface InputHandler extends MafiObject{
+public interface InputHandler extends WildPlotObject{
 
 	void setEventSource(Window newWindow);
     Window getEventSource();

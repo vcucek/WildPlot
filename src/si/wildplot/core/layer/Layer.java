@@ -1,14 +1,14 @@
 package si.wildplot.core.layer;
 
 import java.util.ArrayList;
-import si.wildplot.core.MafiObject;
+import si.wildplot.core.WildPlotObject;
 import si.wildplot.core.render.Renderable;
 
 /**
  *
  * @author vito
  */
-public interface Layer extends MafiObject, Renderable{
+public interface Layer extends WildPlotObject, Renderable{
 
 	public String getName();
 
