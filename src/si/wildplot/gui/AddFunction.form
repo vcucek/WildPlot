@@ -29,6 +29,7 @@
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Component id="button2dExplicit" max="32767" attributes="1"/>
                   <Component id="button2dImplicit" alignment="1" max="32767" attributes="1"/>
+                  <Component id="button3d" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -41,7 +42,9 @@
               <Component id="button2dExplicit" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Component id="button2dImplicit" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="267" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="button3d" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
       </Group>
@@ -111,5 +114,13 @@
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="button3d">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="add 3d function"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button3dActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

@@ -6,9 +6,12 @@
 
 package si.wildplot.gui;
 
+import si.wildplot.core.SceneProvider;
 import si.wildplot.core.Window;
 import si.wildplot.core.render.Function;
+import si.wildplot.core.render.Model;
 import si.wildplot.core.render.Plot2D;
+import si.wildplot.core.render.Plot3D;
 
 /**
  *
@@ -41,6 +44,7 @@ public class AddFunction extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        button3d = new javax.swing.JButton();
 
         setAlwaysOnTop(true);
 
@@ -84,6 +88,13 @@ public class AddFunction extends javax.swing.JFrame {
                     .addContainerGap()))
         );
 
+        button3d.setText("add 3d function");
+        button3d.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button3dActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -93,7 +104,8 @@ public class AddFunction extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(button2dExplicit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(button2dImplicit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(button2dImplicit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(button3d, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -103,7 +115,9 @@ public class AddFunction extends javax.swing.JFrame {
                 .addComponent(button2dExplicit)
                 .addGap(12, 12, 12)
                 .addComponent(button2dImplicit)
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(button3d)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -112,9 +126,9 @@ public class AddFunction extends javax.swing.JFrame {
 
 	private void button2dExplicitMousePressed(java.awt.event.MouseEvent evt)//GEN-FIRST:event_button2dExplicitMousePressed
 	{//GEN-HEADEREND:event_button2dExplicitMousePressed
-		Function f = new Plot2D("", Plot2D.EXPLICIT);
+		Function f = new Plot2D("", Function.TYPE_2D_EXPLICIT);
 		f.setEnabled(false);
-		this.wd.getModel().addRenderable(f);
+		SceneProvider.getInstance().model2D.addRenderable(f);
 		explorer.update();
 		explorer.selectLast();
 		this.setVisible(false);
@@ -122,13 +136,22 @@ public class AddFunction extends javax.swing.JFrame {
 
 	private void button2dImplicitMousePressed(java.awt.event.MouseEvent evt)//GEN-FIRST:event_button2dImplicitMousePressed
 	{//GEN-HEADEREND:event_button2dImplicitMousePressed
-		Function f = new Plot2D("", Plot2D.IMPLICIT);
+		Function f = new Plot2D("", Function.TYPE_2D_IMPLICIT);
 		f.setEnabled(false);
-		this.wd.getModel().addRenderable(f);
+		SceneProvider.getInstance().model2D.addRenderable(f);
 		explorer.update();
 		explorer.selectLast();
 		this.setVisible(false);
 	}//GEN-LAST:event_button2dImplicitMousePressed
+
+    private void button3dActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3dActionPerformed
+		Function f = new Plot3D("");
+		f.setEnabled(false);
+		SceneProvider.getInstance().model3D.addRenderable(f);
+		explorer.update();
+		explorer.selectLast();
+		this.setVisible(false);
+    }//GEN-LAST:event_button3dActionPerformed
 
 //    /**
 //    * @param args the command line arguments
@@ -144,6 +167,7 @@ public class AddFunction extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton button2dExplicit;
     private javax.swing.JButton button2dImplicit;
+    private javax.swing.JButton button3d;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;

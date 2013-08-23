@@ -14,8 +14,10 @@ import javax.swing.AbstractListModel;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import si.wildplot.core.SceneProvider;
 import si.wildplot.core.Window;
 import si.wildplot.core.render.Function;
+import si.wildplot.core.render.Model;
 import si.wildplot.core.render.Plot2D;
 import si.wildplot.core.render.Renderable;
 
@@ -184,8 +186,14 @@ public class Explorer extends javax.swing.JPanel implements PropertyChangeListen
 //	}
 
 	public ArrayList<Function> getFunctions(){
+
+		ArrayList<Renderable> tmp = new ArrayList<Renderable>();
+		tmp.addAll(SceneProvider.getInstance().model2D.getRenderables());
+		tmp.addAll(SceneProvider.getInstance().model3D.getRenderables());
+		
 		ArrayList<Function> functions = new ArrayList<Function>();
-		for(Renderable r : this.wd.getModel().getRenderables()){
+		
+		for(Renderable r : tmp){
 			if(r instanceof Function){
 				functions.add((Function)r);
 			}
@@ -194,23 +202,36 @@ public class Explorer extends javax.swing.JPanel implements PropertyChangeListen
 	}
 
 	public String getFunctionPrefix(int type){
-		if(type == Plot2D.EXPLICIT){
+		if(type == Function.TYPE_2D_EXPLICIT){
 			return "f(x)=";
 		}
-		if(type == Plot2D.IMPLICIT){
+		if(type == Function.TYPE_2D_IMPLICIT){
 			return "f:";
+		}
+
+		if(type == Function.TYPE_3D_EXPLICIT){
+			return "3D f:";
 		}
 		return "";
 	}
 
 	public void setCurrentFunction(Function f){
+		if(f.getType() == Function.TYPE_3D_EXPLICIT){
+			SceneProvider.getInstance().set3DScene();
+		}
+		else{
+			SceneProvider.getInstance().set2DScene();
+		}
+
 		firePropertyChange("Explorer.selection", this.currentFunction, f);
 		this.currentFunction = f;
 	}
 
 	public void update(){
 
-		ArrayList<Renderable> tmp = this.wd.getModel().getRenderables();
+		ArrayList<Renderable> tmp = new ArrayList<Renderable>();
+		tmp.addAll(SceneProvider.getInstance().model2D.getRenderables());
+		tmp.addAll(SceneProvider.getInstance().model3D.getRenderables());
 
 		int counter = 0;
 		for(Renderable r : tmp){

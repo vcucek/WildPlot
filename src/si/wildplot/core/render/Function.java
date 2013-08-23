@@ -10,6 +10,10 @@ import si.wildplot.core.jocl.BasicCLContext;
  */
 public interface Function extends Renderable{
 
+	public static final int TYPE_2D_EXPLICIT = 1;
+	public static final int TYPE_2D_IMPLICIT = 2;
+	public static final int TYPE_3D_EXPLICIT = 3;
+	
 	public String getFunction();
 	public void setFunction(String function);
 	public int getType();

@@ -61,7 +61,13 @@ public class Plot3D extends AbstractPlot{
 
 	public int getType()
 	{
-		return 0;
+		return Function.TYPE_3D_EXPLICIT;
+	}
+
+	@Override
+	public void setFunction(String function) {
+		super.setFunction(function); //To change body of generated methods, choose Tools | Templates.
+		kernel = null;
 	}
 
 	public void preRender(DrawContext dc)
@@ -454,6 +460,11 @@ public class Plot3D extends AbstractPlot{
 
 	private void buildKernel(BasicCLContext clContext){
 
+		String func = this.getFunction();
+		if(func == null || func.isEmpty()){
+			func = "0.0";
+		}
+		
 		String programSource =
         "__kernel void "+
         "sampleValues(float minX,"+
@@ -469,7 +480,7 @@ public class Plot3D extends AbstractPlot{
 		"	float stepY = ((maxY-minY)/(float)res);"+
 		"	float x = minX + (stepX * (float)xInt);"+
 		"	float y = minY + (stepY * (float)yInt);"+
-		"	float fValue = ("+ this.getFunction() +");"+
+		"	float fValue = "+ func +";"+
         "	out[(yInt*res)+xInt] = fValue;"+
         "}";
 		CLContext context = clContext.getContext();

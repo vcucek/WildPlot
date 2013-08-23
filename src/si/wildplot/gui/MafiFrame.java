@@ -17,6 +17,7 @@ import si.wildplot.core.view.BasicView;
 import si.wildplot.core.view.View;
 import si.wildplot.core.Window;
 import si.wildplot.core.WindowGLCanvas;
+import si.wildplot.core.SceneProvider;
 import si.wildplot.core.input.ViewInputHandler;
 import si.wildplot.core.input.ViewInputHandler2D;
 import si.wildplot.core.render.BasicModel;
@@ -92,21 +93,21 @@ public class MafiFrame extends JFrame{
 
     private void initComponents() {
         JLabel label = new JLabel();
-        this.glCanvas = new WindowGLCanvas();
+        this.glCanvas = SceneProvider.getInstance().window;
 
-		Model model2D = new BasicModel();
+		Model model2D = SceneProvider.getInstance().model2D;
 		model2D.addLayer("functions", 10);
 		model2D.addLayer("coordsys", 20);
 
-		Model model3D = new BasicModel();
+		Model model3D = SceneProvider.getInstance().model3D;
 		model3D.addLayer("functions", 10);
 		model3D.addLayer("coordsys", 20);
 
-		View view2D = new View2D();
-		View view3D = new ViewCombined3D2D();
+		View view2D = SceneProvider.getInstance().view2D;
+		View view3D = SceneProvider.getInstance().view3D;
 
-		boolean is3D = false;
-		
+		boolean is3D = false; 
+
 		if(is3D){
 			glCanvas.setModel(model3D);
 			glCanvas.setView(view3D);
@@ -120,6 +121,10 @@ public class MafiFrame extends JFrame{
 		else{
 			glCanvas.setModel(model2D);
 			glCanvas.setView(view2D);
+
+			model3D.setCurrentLayer("coordsys");
+			model3D.addRenderable(new CoordinateSystem3D());
+			model3D.setCurrentLayer("functions");
 
 			model2D.setCurrentLayer("coordsys");
 			model2D.addRenderable(new CoordinateSystem2D());

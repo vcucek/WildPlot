@@ -17,7 +17,6 @@ import si.wildplot.core.layer.Layer;
 public class BasicModel extends WildPlotObjectImpl implements Model{
 
 	private TreeMap<Integer, Layer> layers = new TreeMap<Integer, Layer>();
-	private ArrayList<Renderable> renderables = new ArrayList<Renderable>();
 	
 	private Layer currentLayer = null;
 	private Layer lastLayer = null;

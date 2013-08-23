@@ -27,17 +27,15 @@ public class Plot2D extends AbstractPlot{
 	private Quad screenQuad = Quad.screenQuad;
 	private final int type;
 
-	public static final int EXPLICIT = 1;
-	public static final int IMPLICIT = 2;
 
 	public Plot2D(String function, int type)
 	{
 		super(function, type);
 		//create shader
-		if(type == EXPLICIT){
+		if(type == Function.TYPE_2D_EXPLICIT){
 			shader = BasicShaderFactory.Plot2DExplicit();
 		}
-		else if(type == IMPLICIT){
+		else if(type == Function.TYPE_2D_IMPLICIT){
 			shader = BasicShaderFactory.Plot2DImplicit();
 		}
 		this.type = type;
@@ -59,14 +57,14 @@ public class Plot2D extends AbstractPlot{
 			out += "uniform float " + sp.name + ";\n";
 		}
 
-		if(this.type == EXPLICIT){
+		if(this.type == Function.TYPE_2D_EXPLICIT){
 			out += "float function(float x){\n";
 			out += "	float funcValue;\n";
 			out += "	funcValue = "+ insert +";\n";
 			out += "	return funcValue;\n";
 			out += "}\n";
 		}
-		else if(this.type == IMPLICIT){
+		else if(this.type == Function.TYPE_2D_IMPLICIT){
 			String[] f = insert.split("=");
 			out += "float function(float x, float y){\n";
 			out += "	float funcValue;\n";
