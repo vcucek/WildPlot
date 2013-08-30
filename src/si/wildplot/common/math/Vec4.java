@@ -9,10 +9,6 @@ package si.wildplot.common.math;
 
 import si.wildplot.common.util.Logging;
 
-/**
- *
- * @author vito
- */
 public class Vec4
 {
     public static final Vec4 INFINITY =
